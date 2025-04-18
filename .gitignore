@@ -1,0 +1,12 @@
+# General
+node_modules/
+.env
+*.log
+.DS_Store
+
+# Laravel
+/vendor
+/storage/*.key
+
+# Docker
+docker/mysql/data/
