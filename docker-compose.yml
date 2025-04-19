@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-acortador
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: acortador
+     # MYSQL_USER: ERIC_MANCEBO
+     # MYSQL_PASSWORD: shorter0298
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+    networks:
+      - laravelnet
+
+networks:
+  laravelnet:
+    driver: bridge
