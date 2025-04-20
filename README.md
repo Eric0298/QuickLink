@@ -54,3 +54,18 @@ services:
       - "3307:3306"
     volumes:
       - ./docker/mysql/data:/var/lib/mysql
+
+
+## 🚧 Estado del Endpoint POST /shorten
+
+Se ha implementado la lógica y configurado los middlewares necesarios para aceptar peticiones POST desde Postman.
+
+- ✅ Middleware CSRF actualizado y ajustado para excluir la ruta `/shorten`
+- ✅ Controlador `UrlController@store` con validación completa
+- ✅ Rutas registradas correctamente con `php artisan route:list`
+
+**Problema actual**: Laravel responde con error 419 (`Page Expired`) al enviar datos desde Postman en formato JSON, incluso habiendo desactivado la verificación CSRF.
+
+Se deja pendiente para revisión posterior.
+
+---
