@@ -56,16 +56,23 @@ services:
       - ./docker/mysql/data:/var/lib/mysql
 
 
-## 🚧 Estado del Endpoint POST /shorten
+## 🧪 Intento de implementación de POST /shorten
 
-Se ha implementado la lógica y configurado los middlewares necesarios para aceptar peticiones POST desde Postman.
+### 🔍 Estado actual
+- Se intentó configurar correctamente el middleware `VerifyCsrfToken` y el `TrustProxies`.
+- Se creó correctamente la ruta `POST /shorten`.
+- Postman devuelve error 419 (Page Expired) al intentar enviar datos desde el cliente.
 
-- ✅ Middleware CSRF actualizado y ajustado para excluir la ruta `/shorten`
-- ✅ Controlador `UrlController@store` con validación completa
-- ✅ Rutas registradas correctamente con `php artisan route:list`
+### 🛠️ Acciones realizadas:
+- Se configuró `VerifyCsrfToken.php` para ignorar `/shorten`.
+- Se restauraron middlewares del `Kernel.php`.
+- Se intentó acceder a `store()` con debug (`dd()`) sin éxito.
+- Se revisaron headers de Postman y la cookie `laravel_session`.
 
-**Problema actual**: Laravel responde con error 419 (`Page Expired`) al enviar datos desde Postman en formato JSON, incluso habiendo desactivado la verificación CSRF.
+### 🚧 Problema pendiente:
+- Error 419 aún sin resolver. Se sospecha de conflicto en la lógica CSRF o configuración de sesión en Laravel.
 
-Se deja pendiente para revisión posterior.
+### 📌 Decisión:
+Se deja esta funcionalidad en **standby temporal** para avanzar en el desarrollo general. Se retomará cuando el resto del sistema esté funcionando.
 
 ---
