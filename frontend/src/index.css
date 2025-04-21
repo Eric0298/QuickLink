@@ -1,0 +1,45 @@
+/* Estilos generales */
+body {
+  background-color: #ffffff;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilo del modo oscuro */
+body.dark-theme {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+/* Asegurarse de que los elementos de Bootstrap se vean bien en dark */
+body.dark-theme .card,
+body.dark-theme .table,
+body.dark-theme .form-control,
+body.dark-theme .form-select,
+body.dark-theme .btn {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border-color: #3a3a3a;
+}
+
+body.dark-theme .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Separadores */
+hr {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Navbar modo oscuro */
+body.dark-theme .navbar,
+body.dark-theme .navbar-light {
+  background-color: #1f1f1f !important;
+  color: #ffffff !important;
+}
+
+body.dark-theme .navbar .nav-link {
+  color: #e0e0e0 !important;
+}
